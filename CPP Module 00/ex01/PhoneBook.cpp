@@ -38,7 +38,28 @@ void	PhoneBook::print()
 	std::cout << std::endl;
 }
 
+int	PhoneBook::_readInput()
+{
+	int		input;
+	bool	valid =false;
+
+	do
+	{
+		std::cout << "Enter Index: " << std::flush;
+		std::cin >> input;
+		if (std::cin.good() && input >=0 && input <= 0)
+			valid = true;
+		else
+		{
+			std::cin.clear();
+			std::cout << "Invalid index" << std::endl;
+		}
+	} while (!valid);
+	return(input);
+}
+
 void	PhoneBook::search(void)
 {
-
+	int i= this->_readInput();
+	this->_contact[i].display(i);
 }

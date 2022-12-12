@@ -20,11 +20,12 @@ class PhoneBook
 {
 private:
 	Contact _contact[8];
+	int _readInput();
 public:
 	void    welcome();
 	void	addContact();
 	void	print();
-	void	search();
+	void search();
 };
 
 #endif

@@ -27,7 +27,8 @@ private:
 	int         _code;
 
 	std::string _getInput(std::string str);
-	std::string _print_ten(std::string str);
+    std::string _print_ten(std::string str);
+    bool 		_str_is_digit(std::string str);
 
 public:
 	void    init(void);

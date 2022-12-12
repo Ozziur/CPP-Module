@@ -32,13 +32,28 @@ std::string Contact::_getInput(std::string str)
 	return (input);
 }
 
+bool Contact::_str_is_digit(std::string str)
+{
+	size_t	i = 0;
+
+	while (str[i])
+	{
+		if (false == std::isdigit(str[i]))
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
 void    Contact::init(void)
 {
 	std::cin.ignore();
 	this->_first_name = _getInput("First Name: ");
 	this->_last_name = _getInput("Last Name: ");
 	this->_nickname = _getInput("Nickname: ");
-	this->_phone_number = _getInput("Phone Number: ");
+	do{
+		this->_phone_number = _getInput("Phone Number: ");
+	}while(_str_is_digit(this->_phone_number) == false);
 	this->_secret = _getInput("Darkest Secret: ");
 	std::cout << std::endl;
 }
@@ -70,4 +85,9 @@ void    Contact::display(int code)
 {
 	if (this->_first_name.empty())
 		return ;
+	std::cout << "|" << std::endl;
+	std::cout << "---> Contact #" << code << " <---" << std::endl;
+	std::cout << "First Name:\t" << this->_first_name<< std::endl;
+	std::cout << "Last Name:\t" << this->_last_name<< std::endl;
+	std::cout << "Nickame:\t" << this->_nickname<< std::endl;
 }
