@@ -18,8 +18,9 @@ int main(void)
 	PhoneBook phone;
 	std::string input;
 
-	while (input.compare("EXIT"))
+	while (input.compare("EXIT") && !std::cin.eof())
 	{
+		std::cin.clear();		
 		phone.welcome();
 		std::cout << "> " << std::flush;
 		std::cin >> input;
