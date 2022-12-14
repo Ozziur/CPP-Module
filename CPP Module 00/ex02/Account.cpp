@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 18:06:26 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/13 20:37:13 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/14 09:57:44 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Account::Account(int initiale_deposit)
 	this->_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";"
 				<< "amount:" << _amount << ";"
-				<< "closed" << std::endl;
+				<< "created" << std::endl;
 }
 
 Account::~Account(void)
@@ -80,9 +80,9 @@ int     Account::checkAmount( void ) const {
 void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
-	std::cout << "accounts:" << getNbAccounts << ";"
+	std::cout << "accounts:" << getNbAccounts() << ";"
 			<< "total:" << getTotalAmount() << ";"
-			<< "deposit:" << getNbDeposits << ";"
+			<< "deposit:" << getNbDeposits() << ";"
 			<< "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
