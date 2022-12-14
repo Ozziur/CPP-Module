@@ -47,7 +47,7 @@ int	PhoneBook::_readInput()
 	{
 		std::cout << "Enter Index: " << std::flush;
 		std::cin >> input;
-		if (std::cin.good() && input >=0 && input <= 0)
+		if (std::cin.good() && input >=0 && input <= 8)
 			valid = true;
 		else
 		{

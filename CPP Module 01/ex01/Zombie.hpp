@@ -6,9 +6,12 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:23:11 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/14 17:08:01 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/14 18:58:23 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 
@@ -24,3 +27,5 @@ public:
 };
 
 Zombie* zombieHorde(int N, std::string name);
+
+#endif
