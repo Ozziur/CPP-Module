@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/14 18:08:36 by mruizzo           #+#    #+#              #
-#    Updated: 2022/12/14 18:09:22 by mruizzo          ###   ########.fr        #
+#    Created: 2022/12/14 15:21:54 by mruizzo           #+#    #+#              #
+#    Updated: 2022/12/14 18:12:39 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+NAME			= "HI THIS IS BRAIN"
+	
+SRCS			= main.cpp 
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
 RM				= rm -f
 FLAG			= -Wall -Wextra -Werror -I. -std=c++98
 
-NAME			= "Moar brainz!"
 
 all:			$(NAME)
 
