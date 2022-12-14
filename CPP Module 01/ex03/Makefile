@@ -6,13 +6,13 @@
 #    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 15:21:54 by mruizzo           #+#    #+#              #
-#    Updated: 2022/12/14 18:50:46 by mruizzo          ###   ########.fr        #
+#    Updated: 2022/12/14 20:26:07 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= "Unnecessary violence"
 	
-SRCS			= main.cpp 
+SRCS			= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
