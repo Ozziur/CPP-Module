@@ -6,13 +6,13 @@
 #    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 20:50:44 by mruizzo           #+#    #+#              #
-#    Updated: 2022/12/14 20:51:23 by mruizzo          ###   ########.fr        #
+#    Updated: 2022/12/15 17:06:59 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= "Sed is for losers"
 	
-SRCS			= main.cpp
+SRCS			= main.cpp SedV2.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
