@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:13:19 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/15 18:00:17 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/16 17:41:50 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(void)
     Harl harl;
     do
     {
-        std::cout << "Enter a level: " << std::endl;
+        std::cout << "Enter a level (ONLY CAPS): " << std::endl;
         std::cin >> input;
         harl.complain(input);
-    } while (input.compare("exit"));
+    } while (input.compare("EXIT"));
     return EXIT_SUCCESS;    
 }

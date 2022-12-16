@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:28:23 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/15 18:00:00 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/16 17:37:58 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,11 @@ Harl::~Harl()
 
 void Harl::complain(std::string level)
 {
+	t_function fun[]={&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string levels[]= {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+	while (i < 4 && levels[i].compare(level))
+		i++;
+	if (i < 4)
+		(this->*fun[i])();
 }
