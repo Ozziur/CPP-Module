@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/18 15:42:39 by mruizzo           #+#    #+#              #
-#    Updated: 2022/12/18 15:42:44 by mruizzo          ###   ########.fr        #
+#    Created: 2022/12/18 15:42:47 by mruizzo           #+#    #+#              #
+#    Updated: 2022/12/18 15:43:35 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= "Now we’re talking"
+NAME			= "BSP"
 	
-SRCS			= main.cpp Fixed.cpp
+SRCS			= main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
