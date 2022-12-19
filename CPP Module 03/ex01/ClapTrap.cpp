@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:42 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 19:23:50 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:22:51 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void ClapTrap::attack(const std::string &target)
 		std::cout << this->_name << ": Minion I'm out of SP." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _ATK << " points of damage!" << std::endl;
+	std::cout << _name << " attacks " << target << ", causing " << _ATK << " points of damage!" << std::endl;
 	_SP -= 1;
 }
 

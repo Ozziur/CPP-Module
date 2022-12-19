@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 12:17:29 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 18:16:01 by mruizzo          ###   ########.fr       */
+/*   Created: 2022/12/19 18:28:24 by mruizzo           #+#    #+#             */
+/*   Updated: 2022/12/19 18:57:00 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main ()
+class ScavTrap: public ClapTrap
 {
-    ClapTrap original;
-    ClapTrap dummy("dummy");
+private:
 
-    original.attack("dummy");
-    dummy.takeDamage(5);
-    dummy.beRepaired(10);
-}
+public:
+    ScavTrap();
+    ScavTrap(std::string name);
+    ~ScavTrap();
+    void guardGate();
+};
+
+
+#endif
