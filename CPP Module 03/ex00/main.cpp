@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:29 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 18:16:01 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/19 20:21:46 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int main ()
     original.attack("dummy");
     dummy.takeDamage(5);
     dummy.beRepaired(10);
+    
 }

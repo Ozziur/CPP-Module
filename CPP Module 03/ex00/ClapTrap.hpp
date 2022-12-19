@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:54 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 15:38:49 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/19 20:21:40 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };
-
 
 #endif
