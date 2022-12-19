@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:42 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 19:22:51 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:35:04 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		_HP = 0;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " takes " << amount << " damage!" << std::endl;
+	std::cout << _name << " takes " << amount << " damage!" << std::endl;
 	_HP -= amount;
 	if (_HP <= 0)
 	{

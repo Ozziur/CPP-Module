@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:28:10 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 19:21:50 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:33:45 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 	this->_SP = 50;
 	this->_ATK = 20;
 	
-	std::cout << "I am" << this->_name << " a ScavTrap unit." << std::endl;
+	std::cout << "I am " << this->_name << " a ScavTrap unit." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	this->_SP = 50;
 	this->_ATK = 20;
 
-	std::cout << "I am" << this->_name << " a ScavTrap unit." << std::endl;
+	std::cout << "I am " << this->_name << " a ScavTrap unit." << std::endl;
 }
 
 ScavTrap::~ScavTrap()

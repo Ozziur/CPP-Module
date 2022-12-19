@@ -6,12 +6,12 @@
 #    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 18:13:51 by mruizzo           #+#    #+#              #
-#    Updated: 2022/12/19 18:14:54 by mruizzo          ###   ########.fr        #
+#    Updated: 2022/12/19 19:25:41 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= "Serena, my love"
-	
+
 SRCS			= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS			= $(SRCS:.cpp=.o)
 

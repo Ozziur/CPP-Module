@@ -6,18 +6,19 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:29 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 18:10:22 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:32:16 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main ()
 {
-    ClapTrap original;
-    ClapTrap dummy("dummy");
+	ScavTrap scav;
+	ScavTrap scav2("AHHHHH!");
 
-    original.attack("dummy");
-    dummy.takeDamage(99999);
-    dummy.beRepaired(10);
+	scav.attack("Lilith");
+	scav.beRepaired(2);
+	scav.takeDamage(10);
+	scav.guardGate();
 }
