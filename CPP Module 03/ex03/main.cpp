@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 18:28:24 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/20 15:50:28 by mruizzo          ###   ########.fr       */
+/*   Created: 2022/12/19 12:17:29 by mruizzo           #+#    #+#             */
+/*   Updated: 2022/12/20 12:48:49 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "FragTrap.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap: public ClapTrap
+int main ()
 {
-private:
+	FragTrap ninja;
+	FragTrap ash2(ninja);
 
-public:
-    ScavTrap();
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    
-    void attack(const std::string& target);
-    void guardGate();
-};
-
-
-#endif
+	ninja.attack("Handsome Jack");
+	ninja.takeDamage(10);
+	ninja.beRepaired(10);
+	ninja.highFivesGuys();
+}

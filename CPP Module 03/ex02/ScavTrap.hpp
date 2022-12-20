@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:28:24 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 19:25:49 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:50:28 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
     ScavTrap();
     ScavTrap(std::string name);
     ~ScavTrap();
+    
+    void attack(const std::string& target);
     void guardGate();
 };
 

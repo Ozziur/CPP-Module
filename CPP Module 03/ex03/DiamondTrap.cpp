@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 18:28:24 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/20 15:50:28 by mruizzo          ###   ########.fr       */
+/*   Created: 2022/12/20 16:04:55 by mruizzo           #+#    #+#             */
+/*   Updated: 2022/12/20 16:04:56 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap: public ClapTrap
+DiamondTrap::DiamondTrap()
 {
-private:
-
-public:
-    ScavTrap();
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    
-    void attack(const std::string& target);
-    void guardGate();
-};
-
-
-#endif
+}
