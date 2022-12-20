@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:42 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 19:35:04 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/20 13:03:27 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &rhs)
 {
-	std::cout << "You enjoying the party, minion?" << std::endl;
 	*this = rhs;
+	std::cout << this->_name << ": You enjoying the party, minion?" << std::endl;
+	return;
 }
 
-ClapTrap ClapTrap::operator=(const ClapTrap &rhs)
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 {
 	this->_name = rhs._name;
 	this->_HP = rhs._HP;

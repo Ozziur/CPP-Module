@@ -6,19 +6,19 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:17:29 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/19 19:32:16 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/20 12:48:49 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main ()
 {
-	ScavTrap scav;
-	ScavTrap scav2("AHHHHH!");
+	FragTrap ninja;
+	FragTrap ash2(ninja);
 
-	scav.attack("Lilith");
-	scav.beRepaired(2);
-	scav.takeDamage(10);
-	scav.guardGate();
+	ninja.attack("Handsome Jack");
+	ninja.takeDamage(10);
+	ninja.beRepaired(10);
+	ninja.highFivesGuys();
 }
