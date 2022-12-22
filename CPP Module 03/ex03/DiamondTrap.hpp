@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:58:10 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/20 16:01:38 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/22 11:36:55 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,15 @@
 class DiamondTrap: public FragTrap, public ScavTrap
 {
 private:
-    /* data */
+	std::string _name;
+	
 public:
-    DiamondTrap(/* args */);
-    ~DiamondTrap();
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	~DiamondTrap();
+
+	using ScavTrap::attack;
+	void whoAmI();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:28:10 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/20 15:53:17 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/22 11:46:11 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void ScavTrap::attack(const std::string &target)
 		std::cout << this->_name << ": Minion I'm out of SP." << std::endl;
 		return;
 	}
-	std::cout <<"ScavTrap " << _name << " attacks " << target << ", causing " << _ATK << " points of damage!" << std::endl;
-	_SP -= 1;
+	std::cout <<"ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_ATK << " points of damage!" << std::endl;
+	this->_SP -= 1;
 
 }
 
