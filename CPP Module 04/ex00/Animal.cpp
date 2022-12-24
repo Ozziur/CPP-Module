@@ -6,13 +6,13 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 16:51:03 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/23 17:11:57 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/24 14:42:08 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(): _type("BHO")
+Animal::Animal(): _type("Animal")
 {
 	std::cout << this->_type << " constructor called" << std::endl;
 }
