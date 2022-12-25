@@ -6,11 +6,17 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 17:25:58 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/25 17:26:29 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/25 18:50:32 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <iostream>
+#include "Character.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
