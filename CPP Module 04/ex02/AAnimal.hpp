@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 16:52:29 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/25 17:02:23 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/25 17:30:26 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
     AAnimal( const AAnimal& src );
     AAnimal& operator=( const AAnimal& rhs );
 
-	virtual void    makeSound( void ) const;
+	virtual void    makeSound( void ) const = 0;
     std::string     getType( void ) const;
 };
 

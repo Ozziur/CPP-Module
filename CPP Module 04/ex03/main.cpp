@@ -5,33 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 17:13:11 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/25 17:31:45 by mruizzo          ###   ########.fr       */
+/*   Created: 2022/12/25 17:25:58 by mruizzo           #+#    #+#             */
+/*   Updated: 2022/12/25 17:26:29 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Dog.hpp"
-#include "Cat.hpp"
 
-#include "WrongCat.hpp"
-
-
-int main( void )
+int main()
 {
-	const AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
-
-	delete j;
-	delete i;
-
-	Dog basic;
-	Dog tmp = basic;
-	
-	const AAnimal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-	for (int i = 0; i < 4; i++)
-		animals[i]->makeSound();
-	for (int i = 0; i < 4; i++)
-		delete animals[i];
-	return 0;
+IMateriaSource* src = new MateriaSource();
+src->learnMateria(new Ice());
+src->learnMateria(new Cure());
+ICharacter* me = new Character("me");
+AMateria* tmp;
+tmp = src->createMateria("ice");
+me->equip(tmp);
+tmp = src->createMateria("cure");
+me->equip(tmp);
+ICharacter* bob = new Character("bob");
+me->use(0, *bob);
+me->use(1, *bob);
+delete bob;
+delete me;
+delete src;
 }
