@@ -6,13 +6,13 @@
 #    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/25 17:22:38 by mruizzo           #+#    #+#              #
-#    Updated: 2022/12/25 18:51:58 by mruizzo          ###   ########.fr        #
+#    Updated: 2022/12/27 16:19:39 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= "Interface & recap"
 
-SRCS			= main.cpp AMateria.cpp Ice.cpp Cure.cpp
+SRCS			= Character.cpp Ice.cpp Cure.cpp AMateria.cpp MateriaSource.cpp main.cpp 
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++

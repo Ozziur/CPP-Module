@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 17:25:58 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/25 18:50:32 by mruizzo          ###   ########.fr       */
+/*   Updated: 2022/12/27 16:22:36 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 int main()
 {
+    
 IMateriaSource* src = new MateriaSource();
 src->learnMateria(new Ice());
 src->learnMateria(new Cure());
