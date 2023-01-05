@@ -21,6 +21,8 @@ std::string Contact::_getInput(std::string str)
 	{
 		std::cout << str << std::flush;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+            return ("");
 		if(std::cin.good() && !input.empty())
 			valid = true;
 		else

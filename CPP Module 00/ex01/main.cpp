@@ -31,6 +31,11 @@ int main(void)
 			phone.print();
 			phone.search();
 		}
+		if (std::cin.eof())
+        {
+            break ;
+            return (0);
+        }
 	}
 	return (0);
 }
