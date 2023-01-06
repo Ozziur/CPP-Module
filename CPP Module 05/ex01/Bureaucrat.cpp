@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:09:59 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/06 18:16:27 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/06 18:17:52 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,20 @@ void Bureaucrat::decrementGrade()
 {
 	if ((_grade + 1 > 150))
 		throw Bureaucrat::GradeTooLow();
-	_grade++;
+		_grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+        form.beSigned( *this );
+        std::cout << *this << " signed " << form.getName() << std::endl;
+    }
+	catch (Form::GradeTooLow &e)
+	{
+        std::cout << _name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src)
