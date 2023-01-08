@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:29:52 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/08 23:38:04 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/08 23:38:19 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 Form::Form(const std::string &name, int gradeToSign): _name( name ), _gradeToSign( gradeToSign ), _gradeToExe(0)
 {
 	if ( gradeToSign < 1 )
-		throw Form::GradeTooHigh();
-	if ( gradeToSign > 150 )
-		throw Form::GradeTooLow();
+        throw Form::GradeTooHigh();
+    if ( gradeToSign > 150 )
+        throw Form::GradeTooLow();
 }
 
 Form::Form( const std::string& name, int gradeToSign, int gradeToExe ) : _name(name), _gradeToSign(gradeToSign), _gradeToExe(gradeToExe)
@@ -37,8 +37,8 @@ Form::~Form()
 Form &Form::operator=(const Form &src)
 {
 	if ( this != &src )
-		_signed = src.getSigned();
-	return *this;
+        _signed = src.getSigned();
+    return *this;
 }
 
 std::string Form::getName() const
@@ -71,8 +71,8 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 std::ostream &operator<<(std::ostream &out, const Form &src)
 {
 	out << "------------- Form Info -------------" << std::endl;
-	out << "Form name: " << src.getName() << std::endl
-	  << "Grade to sign: " << src.getGradeToSign() << std::endl
-	  << "Grade to execute: " << src.getGradeToExecute();
-	return out;
+    out << "Form name: " << src.getName() << std::endl
+      << "Grade to sign: " << src.getGradeToSign() << std::endl
+      << "Grade to execute: " << src.getGradeToExecute();
+    return out;
 }

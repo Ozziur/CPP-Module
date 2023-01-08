@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:31:36 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/08 23:37:37 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/08 23:44:03 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,20 @@ class Form
 	const int	 		_gradeToExe;
 	Form();
 public:
-	Form(const std::string& name, int gradeToSign, int gradeToExecute);
+	Form(const std::string& name, int gradeToSign, int gradeToExe);
 	Form(const std::string& name, int gradeToSign);
 	Form(const Form& src);
 	~Form();
 
 	Form &operator=(const Form &src);
 
-	std::string	getName() const;
-	bool        getSigned() const;
-	int         getGradeToSign() const;
-	int			getGradeToExecute() const;
+	std::string		getName() const;
+	bool			getSigned() const;
+	int				getGradeToSign() const;
+	int				getGradeToExecute() const;
 
-	void        beSigned(const Bureaucrat& bureaucrat);
+	void        	beSigned(const Bureaucrat& bureaucrat);
+	virtual void	execute(const Bureaucrat& executor) const = 0;
 
 	class GradeTooHigh: public std::exception
 	{
@@ -51,6 +52,12 @@ public:
 		public:
 			virtual const char* what() const throw() { return "Grade To Low";}
 	};
+
+	class NotSigned : public std::exception
+	{
+        public:
+            virtual const char* what() const throw() { return "Form not signed"; }
+    };
 };
 
 std::ostream	&operator<<(std::ostream& out, const Form &src);

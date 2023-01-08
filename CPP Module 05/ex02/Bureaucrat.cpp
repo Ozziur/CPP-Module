@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:09:59 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/09 00:11:51 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/09 00:12:29 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,36 @@ void Bureaucrat::decrementGrade()
 {
 	if ((_grade + 1 > 150))
 		throw Bureaucrat::GradeTooLow();
-	_grade++;
+		_grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+        form.beSigned( *this );
+        std::cout << *this << " signed " << form.getName() << std::endl;
+    }
+	catch (Form::GradeTooLow &e)
+	{
+        std::cout << _name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src)
 {
 	out << src.getName() <<" Grade " << src.getGrade();
 	return out;
+}
+
+void    Bureaucrat::executeForm( const Form &form ) const
+{
+    try
+	{
+        form.execute(*this);
+    }
+	catch (std::exception& e)
+	{
+        std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+    }
 }
