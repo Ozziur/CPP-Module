@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:04:55 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/22 11:48:15 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/09 19:13:00 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,19 @@ DiamondTrap::~DiamondTrap()
 void DiamondTrap::whoAmI()
 {
 	std::cout << "Who am I? " << this->_name << " or " << this->ClapTrap::_name << "." << std::endl;
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap& fragTrap) : ClapTrap(fragTrap._name + "_clap_name"), FragTrap(fragTrap._name), ScavTrap(fragTrap._name)
+{
+	*this = fragTrap;
+	std::cout << "DiamondTrap Copy constructor called" << std::endl;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& equals)
+{
+	this->_name = equals._name;
+	this->_HP = equals._HP;
+	this->_SP = equals._SP;
+	this->_ATK = equals._ATK;
+	return (*this);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:58:10 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/22 11:36:55 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/09 19:13:07 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
 
 	using ScavTrap::attack;
 	void whoAmI();
+	DiamondTrap(DiamondTrap &fragTrap);
+	DiamondTrap &operator=(const DiamondTrap &equals);
 };
 
 #endif

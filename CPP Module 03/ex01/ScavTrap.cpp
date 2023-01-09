@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:28:10 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/20 15:53:17 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/09 19:03:56 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,20 @@ void ScavTrap::attack(const std::string &target)
 void ScavTrap::guardGate()
 {
 	std::cout << this->_name << ": Gate keeper mode on." << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &rhs): ClapTrap(rhs)
+{
+	*this = rhs;
+	std::cout << _name << ": (Im a scav) You enjoying the party, minion?" << std::endl;
+	return;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& equals)
+{
+	this->_name = equals._name;
+	this->_HP = equals._HP;
+	this->_SP = equals._SP;
+	this->_ATK = equals._ATK;
+	return (*this);
 }

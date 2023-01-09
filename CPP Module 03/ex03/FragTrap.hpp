@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 19:48:53 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/20 16:03:02 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/09 19:10:33 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
 	~FragTrap();
 	
 	void highFivesGuys(void);
+
+	FragTrap(const FragTrap &rhs);
+	FragTrap &operator=(const FragTrap &equals);
 };
 
 #endif
