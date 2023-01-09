@@ -3,63 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:58:30 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/09 19:59:29 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 00:29:52 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include <iostream>
+#include <limits>
+#include <string>
+#include <bits/stdc++.h>
 
-int main(int argc, char *argv[])
+void	toChar(double val)
 {
-	Convert	converter;
-	double	value;
+	char	c = static_cast<char>(val);
 
-	if (argc < 2 || argc > 2)
-	{
-		std::cerr << "Please insert a correct number of params. Ex \"./convert [number|string|float]\"" << std::endl;
-		return (EXIT_FAILURE);
-	}
-	try
-	{
-		converter.setValue(argv[1]);
-	}
-	catch(const std::exception& e)
-	{
-		converter.setDoubleErr("Conversion is impossible");
-		converter.setIntErr("Conversion is impossible");
-		converter.setFloatErr("Conversion is impossible");
-	}
+	if (val != val || !isascii(val))
+		std::cout << "impossible";
+	else if (isprint(c))
+		std::cout << "'" << c << "'";
+	else
+		std::cout << "Non displayable";
+}
 
-	value = converter.getDval();
-	try
-	{
-		converter.toInt(value);
-	}
-	catch(const std::exception& e)
-	{
-		converter.setIntErr(e.what());
-	}
+void	toInt(double val)
+{
+	int	i = static_cast<int>(val);
 
-	try
-	{
-		converter.toFloat(value);
-	}
-	catch(const std::exception& e)
-	{
-		converter.setFloatErr(e.what());
-	}
+	if (val != val || val < INT_MIN || val > INT_MAX)
+		std::cout << "impossible";
+	else
+		std::cout << i;
+}
 
-	try
-	{
-		converter.toChar(value);
-	}
-	catch(const std::exception& e)
-	{
-		converter.setCharErr(e.what());
-	}
-	std::cout << converter << std::endl;
-	return (0);
+void	toFloat(double val)
+{
+	float	f = static_cast<float>(val);
+
+	std::cout << f << "f";
+}
+
+int main(int ac, char **av)
+{
+	if (ac < 2)
+		return 1;
+
+	double	val = atof(av[1]);
+
+	std::cout.precision(1);
+	std::cout << std::fixed;
+
+	std::cout << "char" << ": ";
+	toChar(val);
+	std::cout << std::endl;
+
+	std::cout << "int" << ": ";
+	toInt(val);
+	std::cout << std::endl;
+
+	std::cout << "float" << ": ";
+	toFloat(val);
+	std::cout << std::endl;
+
+	std::cout << "double" << ": ";
+	std::cout << val << std::endl;
 }
