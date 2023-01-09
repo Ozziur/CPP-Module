@@ -6,13 +6,13 @@
 #    By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:55:51 by mruizzo           #+#    #+#              #
-#    Updated: 2023/01/09 14:56:34 by mruizzo          ###   ########.fr        #
+#    Updated: 2023/01/09 20:02:08 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= "Conversion of scalar types"
+NAME			= Convert
 
-SRCS			= main.cpp
+SRCS			= main.cpp Convert.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++

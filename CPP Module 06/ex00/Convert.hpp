@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:01:22 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/09 18:18:01 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/09 20:16:45 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,44 @@ class Convert
 	public:
 		Convert();
 		Convert(std::string value);
-		Convert& Convert::operator=(const Convert &src);
 		~Convert();
+		
+		Convert(const Convert&src);
+		virtual Convert& operator=(const Convert &src);
 
+		// Set val
 		void	setValue(std::string val);
 		void	setDoubleVal(double value);
+		void	setIntVal(int value);
+		void	setFloatVal(float value);
+		void	setCharVal(char value);
+
+		// Get val
+		void getFloatVal(void);
+		void getDoubleVal(void);
+		void getIntVal(void);
+		void getCharVal(void);
+
+		double getDval(void);
+
+		// Convert
+		void toInt(double val);
+		void toFloat(double val);
+		void toChar(double val);
+
+		// Set err
+		void setDoubleErr(std::string error);
+		void setIntErr(std::string error);
+		void setFloatErr(std::string error);
+		void setCharErr(std::string error);
+
+		// Get err
+		std::string getCharErr(void);
+		std::string getFloatErr(void);
+		std::string getIntErr(void);
+		std::string getDoubleErr(void);
 };
+
+std::ostream & operator<<(std::ostream & stream , Convert & content);
 
 #endif
