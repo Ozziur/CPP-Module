@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 14:53:02 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/24 14:53:51 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 16:30:34 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ private:
 public:
 		WrongCat();
 		~WrongCat();
+		WrongCat(const WrongCat& src);
+		WrongCat& operator=(const WrongCat& rhs);
 
 void    makeSound() const;
 };
