@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 17:20:47 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/23 17:22:22 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 16:27:10 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ private:
 public:
     Dog();
     ~Dog();
+    
+    Dog(const Dog& src);
+    Dog& operator=(const Dog& rhs);
 
     void   makeSound( void ) const;
 };

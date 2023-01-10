@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 14:33:43 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/24 14:38:22 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 16:30:53 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,18 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
 	std::cout << "MIAO!!!" << std::endl;
+}
+
+Cat::Cat(const Cat& src): Animal(src)
+{
+	std::cout << "Cat copy constructor called" << std::endl;
+	*this = src;
+}
+
+Cat& Cat::operator=(const Cat& rhs)
+{
+	std::cout << "Cat assignment operator called" << std::endl;
+	if ( this != &rhs )
+		this->_type = rhs._type;
+	return *this;
 }

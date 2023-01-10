@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 14:34:09 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/24 14:34:55 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 16:26:58 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ public:
 	Cat();
 	~Cat();
 
+	Cat(const Cat& src);
+	Cat& operator=(const Cat& rhs);
+	
 	void   makeSound() const;
 };
 
