@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:04:55 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/09 19:13:00 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 12:38:28 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void DiamondTrap::whoAmI()
 	std::cout << "Who am I? " << this->_name << " or " << this->ClapTrap::_name << "." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap& fragTrap) : ClapTrap(fragTrap._name + "_clap_name"), FragTrap(fragTrap._name), ScavTrap(fragTrap._name)
+DiamondTrap::DiamondTrap(DiamondTrap &src) : ClapTrap(src), FragTrap(src), ScavTrap(src)
 {
-	*this = fragTrap;
+	*this = src;
 	std::cout << "DiamondTrap Copy constructor called" << std::endl;
 }
 
