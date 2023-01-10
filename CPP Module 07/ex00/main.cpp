@@ -5,33 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 17:13:11 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/10 17:29:11 by mruizzo          ###   ########.fr       */
+/*   Created: 2023/01/10 17:41:50 by mruizzo           #+#    #+#             */
+/*   Updated: 2023/01/10 17:44:09 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "Dog.hpp"
-#include "Cat.hpp"
-
-#include "WrongCat.hpp"
-
+#include "whatever.hpp"
+#include <iostream>
 
 int main( void )
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+    int a = 2;
+    int b = 3;
 
-	delete j;
-	delete i;
+    swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
 
-	Dog basic;
-	Dog tmp = basic;
-	
-	const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-	for ( int i = 0; i < 4; i++ ) {
-		delete animals[i];
-	}
+    std::cout << "min(a, b) = " << min(a, b) << std::endl;
+    std::cout << "max(a, b) = " << max(a, b) << std::endl;
 
-	return 0;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+
+    swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+
+    std::cout << "min(c, d  = " << min(c, d) << std::endl;
+    std::cout << "max(c, d) = " << max(c, d) << std::endl;
+
+    return 0;
 }

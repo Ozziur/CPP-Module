@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 17:13:11 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/10 17:29:11 by mruizzo          ###   ########.fr       */
+/*   Created: 2023/01/10 17:15:52 by mruizzo           #+#    #+#             */
+/*   Updated: 2023/01/10 17:41:21 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-
-#include "WrongCat.hpp"
-
-
-int main( void )
+template <typename T>
+void	swap(T &a, T &b)
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	T temp = a;
+	a = b;
+	b = temp;
+}
 
-	delete j;
-	delete i;
+template <typename T>
+T		min(T &a, T &b)
+{
+	return (a < b ? a : b);
+}
 
-	Dog basic;
-	Dog tmp = basic;
-	
-	const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-	for ( int i = 0; i < 4; i++ ) {
-		delete animals[i];
-	}
-
-	return 0;
+template <typename T>
+T		max(T &a, T &b)
+{
+	return (a > b ? a : b);
 }
