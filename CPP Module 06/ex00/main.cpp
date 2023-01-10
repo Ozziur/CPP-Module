@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:58:30 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/10 00:29:52 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/10 11:46:12 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <limits>
 #include <string>
-#include <bits/stdc++.h>
 
 void	toChar(double val)
 {
