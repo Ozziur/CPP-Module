@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:29:28 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/11 12:40:44 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/11 14:00:03 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,50 @@ public:
 	Array(const Array &src): _array(new T[src.size()]), _size(src.size())
 	{
 		for (size_t i = 0; i < _size; i++)
-		_arr[i] = rhs._arr[i];
+		_array[i] = src._array[i];
 	}
-	~Array(){delate [] _array};
+	~Array(){delete [] _array;};
 
-	
+	Array &operator=(const Array &src)
+	{
+		if (this != &src)
+		{
+			delete [] _array;
+			_array = new T[src.size()];
+			_size = src.size();
+			for (size_t i = 0; i < src.size(); i++)
+				_array[i] = src._array[i];
+		}
+		return *this;
+	}
+
+	T& operator[](unsigned int index)
+	{
+		if (index >= _size)
+			throw std::out_of_range("Index out of bounds");
+		return _array[index];
+	}
+
+	const T& operator[](unsigned int index) const
+	{
+		if (index >= _size)
+			throw std::out_of_range("Index out of bounds");
+		return _array[index];
+	}
 
 	unsigned int	size(void) const {return _size;}
+
+	class OutOfBoundsException : public std::exception
+	{
+        public:
+            virtual const char* what() const throw() {return "Index is out of bounds";}
+    };
 };
+
+template < typename T >
+std::ostream& operator<<(std::ostream &out, const Array<T> &arr)
+{
+    for (size_t i = 0; i < arr.size(); i++)
+        out << arr[i] << std::flush;
+    return out;
+}
