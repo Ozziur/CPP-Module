@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:01:08 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/11 16:04:18 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/11 16:31:55 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void Character::use(int idx, ICharacter &target)
 	if (this->_inventory[idx])
 	{
 		this->_inventory[idx]->use(target);
-		std::cout << "Character " << this->_name << std:: flush;
+		std::cout << "Character " << this->_name << std::flush;
 		this->_inventory[idx]->use(target);
 	}
 	else

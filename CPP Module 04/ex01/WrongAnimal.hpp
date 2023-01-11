@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 14:42:50 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/24 14:55:38 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:42:36 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	WrongAnimal(const WrongAnimal& src);
 	WrongAnimal& operator=(const WrongAnimal& rhs);
 
-	void            makeSound() const;
+	void			makeSound() const;
 	std::string     getType() const; 
 };
 
