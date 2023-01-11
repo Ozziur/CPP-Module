@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 15:01:08 by mruizzo           #+#    #+#             */
-/*   Updated: 2022/12/27 15:23:10 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/11 16:04:18 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void Character::unequip(int idx)
 {
 	if (this->_inventory[idx])
 	{
-		delete this->_inventory[idx];
+		//delete this->_inventory[idx];
 		this->_inventory[idx] = NULL;
 		std::cout << "Character " << this->_name << " unequipped" << std::endl;
 	}
@@ -87,7 +87,8 @@ void Character::use(int idx, ICharacter &target)
 	if (this->_inventory[idx])
 	{
 		this->_inventory[idx]->use(target);
-		std::cout << "Character " << this->_name << " uses " << this->_inventory[idx]->getType() << std::endl;
+		std::cout << "Character " << this->_name << std:: flush;
+		this->_inventory[idx]->use(target);
 	}
 	else
 		std::cout << "Character " << this->_name << " can't use" << std::endl;
