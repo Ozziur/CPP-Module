@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:29:52 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/08 23:38:04 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/12 13:30:03 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Form::~Form()
 
 Form &Form::operator=(const Form &src)
 {
-	if ( this != &src )
+	if (this != &src)
 		_signed = src.getSigned();
 	return *this;
 }
