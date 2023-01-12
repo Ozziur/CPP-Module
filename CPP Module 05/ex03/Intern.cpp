@@ -29,22 +29,31 @@ Intern &Intern::operator=(const Intern &src)
 	return (*this);
 }
 
+static Form*	makePresidentialPardonForm(std::string const & target) { return (new PresidentialPardonForm(target)); }
+static Form*	makeRobotomyRequestForm(std::string const & target) { return (new RobotomyRequestForm(target)); }
+static Form*	makeShrubberyCreationForm(std::string const & target) { return (new ShrubberyCreationForm(target)); }
+
 Form *Intern::makeForm(std::string name, std::string target)
 {
-	std::string formNames[] = {"robotomy request", "presidential pardon", "shrubbery creation"};
-	for (int i(0); i < 3; i++)
+	Form* form;
+	typedef Form* (*func)(std::string const &target);
+	typedef struct {std::string form_name; func function;} FormTypes;
+	
+	form = NULL;
+	FormTypes	forms[] = 
 	{
-        if ( name == formNames[i] )
+		{"presidential pardon", &makePresidentialPardonForm},
+		{"robotomy request", &makeRobotomyRequestForm},
+		{"shrubbery creation", &makeShrubberyCreationForm}
+	};
+
+	for (int i = 0; i < 3; i++)
+		if (forms[i].form_name == name)
 		{
-            std::cout << "Intern creates " << name << std::endl;
-            if (name.compare("robotomy request") == 0)
-				return new RobotomyRequestForm(target);
-			else if (name.compare("presidential pardon") == 0)
-				return new PresidentialPardonForm(target);
-			else if (name.compare("shrubbery creation") == 0)
-				return new ShrubberyCreationForm(target);
-        }
-	}
-	std::cout << "Intern: No one explained to me how to do it" << std::endl;
-    return nullptr;
+			form = forms[i].function(target); // function corrisponde alla funzione nella struct forms
+			std::cout << "Intern creates " << form->getName() << std::endl;
+			return (form);
+		}
+	std::cout << "Intern is not able to create the form asked." << std::endl;
+	return (form);
 }
