@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 16:10:26 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/09 01:47:46 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/12 18:25:00 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,42 +17,26 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-int main( void )
+int	main(void)
 {
-
-	{
-		Intern  someRandomIntern;
-		Form*   rrf;
-
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		delete rrf;
-	}
+	Intern		usefulIdiot;
+	Bureaucrat	paul("Paul", 3);
+	Form		*form;
 
 	srand(time(NULL));//crea il seed
-	try {
-		Bureaucrat bureaucrat("Kid Cudi", 2);
-		ShrubberyCreationForm form1("Shrubbery");
-		RobotomyRequestForm form2("Robotomy");
-		PresidentialPardonForm form3("President");
 
-		std::cout << "\n--------------- Form 1 ( Shrubbery ) ---------------" << std::endl;
-		bureaucrat.signForm(form1);
-		bureaucrat.executeForm(form1);
-		std::cout << "\n--------------- Form 2 ( Robotomy ) ---------------" << std::endl;
-		bureaucrat.signForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		bureaucrat.executeForm(form2);
-		std::cout << "\n--------------- Form 3 ( President ) ---------------" << std::endl;
-		bureaucrat.signForm(form3);
-		bureaucrat.executeForm(form3);
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-	return EXIT_SUCCESS;
+	form = usefulIdiot.makeForm("this one doesn't exist", "Justin");
+	if (form)
+		delete form;
+	form = usefulIdiot.makeForm("presidential pardon", "Maynard");
+	if (form)
+		delete form;
+	form = usefulIdiot.makeForm("shrubbery creation", "Danny");
+	if (form)
+		delete form;
+	form = usefulIdiot.makeForm("robotomy request", "Adam");
+	form->beSigned(paul);
+	form->execute(paul);
+	if (form)
+		delete form;
 }

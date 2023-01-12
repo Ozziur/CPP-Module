@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 17:31:36 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/08 23:44:03 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/12 18:08:43 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Form(const std::string& name, int gradeToSign, int gradeToExe);
 	Form(const std::string& name, int gradeToSign);
 	Form(const Form& src);
-	~Form();
+	virtual ~Form();
 
 	Form &operator=(const Form &src);
 
