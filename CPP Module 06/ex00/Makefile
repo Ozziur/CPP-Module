@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+         #
+#    By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:55:51 by mruizzo           #+#    #+#              #
-#    Updated: 2023/01/10 00:30:04 by mruizzo          ###   ########.fr        #
+#    Updated: 2023/01/13 12:05:11 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= convert
 
-SRCS			= main.cpp
+SRCS			= main.cpp Convert.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
