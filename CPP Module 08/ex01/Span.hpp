@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:18:31 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/16 12:18:21 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:21:01 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Span
 {
 private:
 	std::list<int>	_list;
-    unsigned int	_n;
+    unsigned int	_size;
 public:
 	Span();
 	Span(const unsigned int n);
@@ -29,11 +29,13 @@ public:
 
 	Span &operator=(const Span &src);
 
-	void	addNumber(int);
-	void	addNumber(std::list<int>::const_iterator, std::list<int>::const_iterator);
+	void	addNumber(int n);
+	void	addNumber(std::list<int>::const_iterator itBegin, std::list<int>::const_iterator itEnd);
 	
 	unsigned int shortestSpan() const;
 	unsigned int longestSpan() const;
+	
+	const std::list<int> *getList(void) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Span &src);
