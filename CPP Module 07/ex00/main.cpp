@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:41:50 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/01/10 17:44:09 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/01/16 12:44:14 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main( void )
     swap(c, d);
     std::cout << "c = " << c << ", d = " << d << std::endl;
 
-    std::cout << "min(c, d  = " << min(c, d) << std::endl;
+    std::cout << "min(c, d)  = " << min(c, d) << std::endl;
     std::cout << "max(c, d) = " << max(c, d) << std::endl;
 
     return 0;
