@@ -6,7 +6,7 @@
 #    By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 14:41:09 by mruizzo           #+#    #+#              #
-#    Updated: 2023/03/14 16:20:48 by mruizzo          ###   ########.fr        #
+#    Updated: 2023/03/14 18:14:07 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
 RM				= rm -f
-FLAG			= #-Wall -Wextra -Werror -std=c++98
+FLAG			= -Wall -Wextra -Werror -std=c++98
 
 
 all:			$(NAME)

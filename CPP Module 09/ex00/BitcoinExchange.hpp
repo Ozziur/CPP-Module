@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:53:28 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/14 17:24:56 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/14 18:28:40 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <fstream>
 #include <algorithm>
 #include <map>
+
 
 class BitcoinExchange
 {
