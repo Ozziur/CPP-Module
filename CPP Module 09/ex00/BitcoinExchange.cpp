@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/14 18:32:00 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/14 18:48:37 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@
 
 static bool	checkDateFormat(const std::string& date)
 {
-    if (date.length() != 10) {
-        return false;
-    }
-    if (date[4] != '-' || date[7] != '-') {
-        return false;
-    }
-    int year, month, day;
-    if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3) {
-        return false;
-    }
-    if (month < 1 || month > 12 || day < 1 || day > 31) {
-        return false;
-    }
-    return true;
+	if (date.length() != 10) {
+		return false;
+	}
+	if (date[4] != '-' || date[7] != '-') {
+		return false;
+	}
+	int year, month, day;
+	if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3) {
+		return false;
+	}
+	if (month < 1 || month > 12 || day < 1 || day > 31) {
+		return false;
+	}
+	return true;
 }
 
 static void load_csv(std::map<std::string, float> &csv, std::ifstream &file)
