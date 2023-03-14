@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/14 18:48:37 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/14 19:17:35 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,18 @@ BitcoinExchange::BitcoinExchange()
 
 BitcoinExchange::~BitcoinExchange()
 {}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
+{
+	*this = src;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &rhs)
+{
+	if (this != &rhs)
+		this->csv = rhs.csv;
+	return *this;
+}
 
 void BitcoinExchange::exchange(char *path)
 {		

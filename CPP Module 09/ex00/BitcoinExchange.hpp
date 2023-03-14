@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:53:28 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/14 18:28:40 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/14 19:16:26 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public:
 	BitcoinExchange();
 	~BitcoinExchange();
 
-	// BitcoinExchange( const BitcoinExchange& src );
-    // BitcoinExchange& operator=( const BitcoinExchange& rhs );
+	BitcoinExchange( const BitcoinExchange& src );
+    BitcoinExchange& operator=( const BitcoinExchange& rhs );
 
 	void exchange(char* path);
 };
