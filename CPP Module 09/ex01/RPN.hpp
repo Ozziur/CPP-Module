@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 09:30:54 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/16 10:59:21 by mruizzo          ###   ########.fr       */
+/*   Created: 2023/03/16 09:31:51 by mruizzo           #+#    #+#             */
+/*   Updated: 2023/03/16 11:53:33 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#ifndef RPN_HPP
+#define RPN_HPP
 
-int main(int argc, char** argv)
+#include <string>
+#include <stack>
+#include <iostream>
+#include <sstream>
+
+class RPN
 {
-    if (argc != 2)
-	{
-        std::cerr << "Error: expected one argument with the RPN expression." << std::endl;
-        return 1;
-    }
+	private:
+		std::string			_expr;
+		std::stack <int>	_num;
+	public:
+		RPN(std::string expr);
+		~RPN();
 
-    RPN rpn(argv[1]);
-    if (rpn.evaluate())
-        return 0;
-	else
-        return 1;
-}
+		RPN(const RPN& src);
+    	RPN& operator=(const RPN& rhs);
+
+		bool evaluate();
+};
+
+#endif
