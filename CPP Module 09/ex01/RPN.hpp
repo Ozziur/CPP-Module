@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:31:51 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/16 11:53:33 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:20:05 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stack>
 #include <iostream>
 #include <sstream>
+#include <cctype>
 
 class RPN
 {

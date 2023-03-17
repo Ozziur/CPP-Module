@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/14 19:17:35 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/17 15:14:24 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,20 @@
 // {
 //     for (auto const &pair: m) {
 //         std::cout << "{" << pair.first << ": " << pair.second << "}\n";
-//     }
+//     } 
 // }
 
 // //////
+
+static std::string check_digits(const std::string& s) 
+{
+    for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
+        if (!isdigit(*it)) {
+            throw std::invalid_argument("Error: The string contains a non-numeric character.");
+        }
+    }
+    return s;
+}
 
 static bool	checkDateFormat(const std::string& date)
 {
@@ -53,7 +63,11 @@ static void load_csv(std::map<std::string, float> &csv, std::ifstream &file)
 		size_t commaPos = line.find(",");
 		beforeComma = line.substr(0, commaPos);
    		afterComma = line.substr(commaPos + 1);
+		try {
 		csv[beforeComma]= stof(afterComma);
+		}catch (std::exception &e) {
+		std::cout << "eccezione di stof" << std::endl;
+		}
 	}
 }
 
@@ -125,12 +139,22 @@ void BitcoinExchange::exchange(char *path)
 				std::cout << "Error: date not valid." << std::endl;
 			else if (iter != this->csv.end())
 			{
+				try
+				{
 				if (checkDateFormat(beforeSep) == false)
 					std::cout << "Error: date not valid." << std::endl;
 				if (stof(afterSep) >= 0 && stof(afterSep) <= 1000)
+				{
+					check_digits(afterSep);
 					std::cout << beforeSep << " => " << afterSep << " = " << stof(afterSep) * this->csv[beforeSep] << std::endl;
+				}
 				else
 					std::cout << "Error: not a significant number." << std::endl;
+				}
+				catch(const std::exception& e)
+				{
+					std::cout << e.what() << std::endl;
+				}
 			}
 			else
 				std::cout << "Don't found in data.csv" << std::endl;

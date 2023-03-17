@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:44:29 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/16 11:54:46 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:21:25 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ bool RPN::evaluate()
 			_num.pop();
 			int b = _num.top();
 			_num.pop();
-			_num.push(a - b);
+			_num.push(b - a);
 		}
 		else if (token == "*")
 		{
@@ -97,6 +97,11 @@ bool RPN::evaluate()
 				return (false);
 			}
 			_num.push(b / a);
+		}
+		if (std::isalpha(token[0]))
+		{
+			std::cerr << "espressione malformata lettere" << std::endl;
+				return (false);
 		}
 	}
 

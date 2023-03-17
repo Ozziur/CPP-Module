@@ -6,7 +6,7 @@
 #    By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 14:41:09 by mruizzo           #+#    #+#              #
-#    Updated: 2023/03/16 15:28:16 by mruizzo          ###   ########.fr        #
+#    Updated: 2023/03/17 15:16:00 by mruizzo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,3 +33,5 @@ fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean $(NAME)
+
+.PHONY: all clean fclean re
