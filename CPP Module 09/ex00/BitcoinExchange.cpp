@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/17 15:14:24 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/17 17:57:50 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@
 
 static std::string check_digits(const std::string& s) 
 {
-    for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
-        if (!isdigit(*it)) {
-            throw std::invalid_argument("Error: The string contains a non-numeric character.");
-        }
-    }
-    return s;
+	for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
+		if (!isdigit(*it) && *it != '-') {
+			throw std::invalid_argument("Error: The string contains a non-numeric character.");
+		}
+	}
+	return s;
 }
 
 static bool	checkDateFormat(const std::string& date)

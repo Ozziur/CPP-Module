@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:34:59 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/16 17:01:01 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/17 17:57:20 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+static std::string check_digits(const std::string& s) 
+{
+    for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
+        if (!isdigit(*it) && *it != '-')
+		{
+            throw std::invalid_argument("Error: The string contains a non-numeric character.");
+        }
+    }
+    return s;
+}
 
 int main(int argc, char** argv)
 {
@@ -25,15 +36,24 @@ int main(int argc, char** argv)
 
 	for (int i = 1; i < argc; i++)
 	{
-		int val = std::atoi(argv[i]);
-		if (val <= 0)
+		try
 		{
-			std::cerr << "Error: argument " << i << " is not a positive integer" << std::endl;
-			return 1;
+			check_digits(argv[i]);
+			int val = std::atoi(argv[i]);
+			if (val <= 0)
+			{
+				std::cerr << "Error: argument " << argv[i] << " is not a positive integer" << std::endl;
+				return 1;
+			}
+			vec.push_back(val);//aggiunge in coda nel container
+			lst.push_back(val);
 		}
-		vec.push_back(val);//aggiunge in coda nel container
-		lst.push_back(val);
-	}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+			exit(1);
+		}
+	}	
 
 	std::cout << "Unsorted sequence:";
 	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
