@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruizzo <mruizzo@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/17 17:57:50 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/03/20 17:11:14 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 // template<typename K, typename V>
 // void print_map(std::map<K, V> const &m)
 // {
-//     for (auto const &pair: m) {
+//     for (auto const &pair: m)
+// 	{
 //         std::cout << "{" << pair.first << ": " << pair.second << "}\n";
 //     } 
 // }
@@ -27,8 +28,10 @@
 
 static std::string check_digits(const std::string& s) 
 {
-	for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
-		if (!isdigit(*it) && *it != '-') {
+	for (std::string::const_iterator it = s.begin(); it != s.end(); ++it)
+	{
+		if (!isdigit(*it) && *it != '-' && *it != '.')
+		{
 			throw std::invalid_argument("Error: The string contains a non-numeric character.");
 		}
 	}
@@ -37,19 +40,15 @@ static std::string check_digits(const std::string& s)
 
 static bool	checkDateFormat(const std::string& date)
 {
-	if (date.length() != 10) {
+	if (date.length() != 10)
 		return false;
-	}
-	if (date[4] != '-' || date[7] != '-') {
+	if (date[4] != '-' || date[7] != '-')
 		return false;
-	}
 	int year, month, day;
-	if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3) {
+	if (std::sscanf(date.c_str(), "%d-%d-%d", &year, &month, &day) != 3)
 		return false;
-	}
-	if (month < 1 || month > 12 || day < 1 || day > 31) {
+	if (month < 1 || month > 12 || day < 1 || day > 31)
 		return false;
-	}
 	return true;
 }
 
@@ -141,15 +140,15 @@ void BitcoinExchange::exchange(char *path)
 			{
 				try
 				{
-				if (checkDateFormat(beforeSep) == false)
-					std::cout << "Error: date not valid." << std::endl;
-				if (stof(afterSep) >= 0 && stof(afterSep) <= 1000)
-				{
-					check_digits(afterSep);
-					std::cout << beforeSep << " => " << afterSep << " = " << stof(afterSep) * this->csv[beforeSep] << std::endl;
-				}
-				else
-					std::cout << "Error: not a significant number." << std::endl;
+					if (checkDateFormat(beforeSep) == false)
+						std::cout << "Error: date not valid." << std::endl;
+					if (stof(afterSep) >= 0 && stof(afterSep) <= 1000)
+					{
+						check_digits(afterSep);
+						std::cout << beforeSep << " => " << afterSep << " = " << stof(afterSep) * this->csv[beforeSep] << std::endl;
+					}
+					else
+						std::cout << "Error: not a significant number." << std::endl;
 				}
 				catch(const std::exception& e)
 				{
