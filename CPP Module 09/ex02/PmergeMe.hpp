@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:28:24 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/16 16:55:32 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/04/17 18:05:20 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 #include <cstdlib>
 
 template<typename Iterator>
+Iterator my_prev(Iterator it, typename std::iterator_traits<Iterator>::difference_type n = 1) {
+    std::advance(it, -n);
+    return it;
+}
+
+
+template<typename Iterator>
 void merge(Iterator begin, Iterator middle, Iterator end)
 {
 	std::inplace_merge(begin, middle, end); //fonde due sequenze ordinate in una singola sequenza ordinata
@@ -32,9 +39,9 @@ void insertion_sort(Iterator begin, Iterator end)
 	for (Iterator i = begin; i != end; ++i)
 	{
 		Iterator j = i;
-		while (j != begin && *j < *(std::prev(j)))
+		while (j != begin && *j < *(my_prev(j)))
 		{
-			std::iter_swap(j, std::prev(j));
+			std::iter_swap(j, my_prev(j));
 			--j;
 		}
 	}
