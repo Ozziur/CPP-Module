@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/04/17 17:43:36 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/04/17 18:12:53 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@
 // }
 
 // //////
+
+template<typename Iterator>
+Iterator my_prev(Iterator it, typename std::iterator_traits<Iterator>::difference_type n = 1) {
+    std::advance(it, -n);
+    return it;
+}
 
 static std::string check_digits(const std::string& s) 
 {
@@ -126,37 +132,67 @@ void BitcoinExchange::exchange(char *path)
 	while (getline(inpfile, line))
 	{
 		size_t SepPos = line.find(" | ");
-		if (SepPos ==  std::string::npos)
-			std:: cout << "Separator \" | \" not found" << std::endl;
+		if (SepPos == std::string::npos)
+		{
+			std::cout << "Separator \" | \" not found" << std::endl;
+			continue;
+		}
+		beforeSep = line.substr(0, SepPos);
+		afterSep = line.substr(SepPos + 3);
+
+		std::map<std::string, float>::iterator iter = this->csv.find(beforeSep);
+		if (checkDateFormat(beforeSep) == false)
+		{
+			std::cout << "Error: date not valid." << std::endl;
+			continue;
+		}
+		if (iter != this->csv.end())
+		{
+			try
+			{
+				if (atof(afterSep.c_str()) >= 0 && atof(afterSep.c_str()) <= 1000)
+				{
+					check_digits(afterSep);
+					std::cout << beforeSep << " => " << afterSep << " = " << atof(afterSep.c_str()) * this->csv[beforeSep] << std::endl;
+				}
+				else
+				{
+					std::cout << "Error: not a significant number." << std::endl;
+				}
+			}
+			catch (const std::exception &e)
+			{
+				std::cout << e.what() << std::endl;
+			}
+		}
 		else
 		{
-			beforeSep = line.substr(0, SepPos);
-			afterSep = line.substr(SepPos + 3);
-
-			std::map<std::string, float>::iterator iter = this->csv.find(beforeSep);
-			if (checkDateFormat(beforeSep) == false)
-				std::cout << "Error: date not valid." << std::endl;
-			else if (iter != this->csv.end())
+			std::map<std::string, float>::iterator lower = this->csv.lower_bound(beforeSep);
+			if (lower == this->csv.begin())
 			{
+				std::cout << "No data available before " << beforeSep << std::endl;
+			}
+			else
+			{
+				std::map<std::string, float>::iterator prev = my_prev(lower);
+				std::cout << "Data not found for " << beforeSep << ", using exchange rate from " << prev->first << std::endl;
 				try
 				{
-					if (checkDateFormat(beforeSep) == false)
-						std::cout << "Error: date not valid." << std::endl;
 					if (atof(afterSep.c_str()) >= 0 && atof(afterSep.c_str()) <= 1000)
 					{
 						check_digits(afterSep);
-						std::cout << beforeSep << " => " << afterSep << " = " << atof(afterSep.c_str()) * this->csv[beforeSep] << std::endl;
+						std::cout << prev->first << " => " << afterSep << " = " << atof(afterSep.c_str()) * prev->second << std::endl;
 					}
 					else
+					{
 						std::cout << "Error: not a significant number." << std::endl;
+					}
 				}
-				catch(const std::exception& e)
+				catch (const std::exception &e)
 				{
 					std::cout << e.what() << std::endl;
 				}
 			}
-			else
-				std::cout << "Don't found in data.csv" << std::endl;
 		}
 	}
 }
