@@ -6,7 +6,7 @@
 /*   By: mruizzo <mruizzo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:01:25 by mruizzo           #+#    #+#             */
-/*   Updated: 2023/03/20 17:11:14 by mruizzo          ###   ########.fr       */
+/*   Updated: 2023/04/17 17:43:36 by mruizzo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ static void load_csv(std::map<std::string, float> &csv, std::ifstream &file)
 		beforeComma = line.substr(0, commaPos);
    		afterComma = line.substr(commaPos + 1);
 		try {
-		csv[beforeComma]= stof(afterComma);
+		csv[beforeComma]= atof(afterComma.c_str());
 		}catch (std::exception &e) {
-		std::cout << "eccezione di stof" << std::endl;
+		std::cout << "eccezione di atof" << std::endl;
 		}
 	}
 }
@@ -79,7 +79,7 @@ BitcoinExchange::BitcoinExchange()
 		file.open("data.csv");
 		if (file.fail()) throw e;
 	}
-	catch (const std::exception e)
+	catch (const std::exception &e)
 	{
 		std::cout << "data.csv don't found" << std::endl;
 	}
@@ -113,7 +113,7 @@ void BitcoinExchange::exchange(char *path)
 		inpfile.open(path);
 		if (inpfile.fail()) throw e;
 	}
-	catch (const std::exception e)
+	catch (const std::exception &e)
 	{
 		std::cout << "input file don't found" << std::endl;
 	}
@@ -142,10 +142,10 @@ void BitcoinExchange::exchange(char *path)
 				{
 					if (checkDateFormat(beforeSep) == false)
 						std::cout << "Error: date not valid." << std::endl;
-					if (stof(afterSep) >= 0 && stof(afterSep) <= 1000)
+					if (atof(afterSep.c_str()) >= 0 && atof(afterSep.c_str()) <= 1000)
 					{
 						check_digits(afterSep);
-						std::cout << beforeSep << " => " << afterSep << " = " << stof(afterSep) * this->csv[beforeSep] << std::endl;
+						std::cout << beforeSep << " => " << afterSep << " = " << atof(afterSep.c_str()) * this->csv[beforeSep] << std::endl;
 					}
 					else
 						std::cout << "Error: not a significant number." << std::endl;
